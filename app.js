@@ -56,15 +56,29 @@
   const frames = document.querySelectorAll('.scard__img, .wcard__img, .how__frame, .safety__img, .lead__img, .door__img, .ncard__img');
   frames.forEach(f => f.classList.add('rv'));
 
+  /* tags inside frames drop in when their own card is in view (works for sideways swipe rows too) */
+  const drops = document.querySelectorAll('.wcard__img .tab, .how__tab, .door > .tab');
+  drops.forEach(t => t.classList.add('drop'));
+  const dio = new IntersectionObserver(es => es.forEach(e => {
+    if (!e.isIntersecting) return;
+    e.target.querySelectorAll('.drop').forEach(t => t.classList.add('in')); dio.unobserve(e.target);
+  }), { threshold: .3 });
+  /* watch the card, not the frame: the frame's own clip-path reveal hides it from the observer */
+  new Set([...drops].map(t => t.closest('.wcard, .how__media, .door'))).forEach(c => dio.observe(c));
+
+  /* short lists rise in one item after another */
+  const lists = document.querySelectorAll('.sfacts, .awards, .proof__grid');
+  lists.forEach(l => l.classList.add('stagger'));
+
   const io = new IntersectionObserver(es => es.forEach(e => {
     if (!e.isIntersecting) return;
     e.target.classList.add('in'); io.unobserve(e.target);
     if (e.target.matches('.proof__grid')) countUp(e.target);
   }), { rootMargin: '0px 0px -8% 0px' });
-  document.querySelectorAll('[data-lines], .rv, .climb, .proof__grid').forEach(el => io.observe(el));
+  document.querySelectorAll('[data-lines], .rv, .climb, .proof__grid, .stagger').forEach(el => io.observe(el));
 
   /* backup sweep for fast flicks: anything already above the fold line gets revealed */
-  const sweep = () => document.querySelectorAll('[data-lines]:not(.in), .rv:not(.in), .climb:not(.in)').forEach(el => {
+  const sweep = () => document.querySelectorAll('[data-lines]:not(.in), .rv:not(.in), .climb:not(.in), .stagger:not(.in)').forEach(el => {
     if (el.getBoundingClientRect().top < innerHeight * .95) el.classList.add('in');
   });
   addEventListener('scroll', sweep, { passive: true }); sweep();
