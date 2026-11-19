@@ -61,7 +61,12 @@
   drops.forEach(t => t.classList.add('drop'));
   const dio = new IntersectionObserver(es => es.forEach(e => {
     if (!e.isIntersecting) return;
-    e.target.querySelectorAll('.drop').forEach(t => t.classList.add('in')); dio.unobserve(e.target);
+    dio.unobserve(e.target);
+    /* the photo frame opens from the bottom first; the tag sits at its top edge, so wait until the frame has opened
+       or the drop happens out of sight behind the frame's mask */
+    const f = e.target.querySelector('.rv'), opened = f && f.dataset.t ? performance.now() - f.dataset.t : 0;
+    const wait = !f ? 150 : !f.classList.contains('in') ? 1100 : Math.max(150, 1000 - opened);
+    e.target.querySelectorAll('.drop').forEach(t => { t.style.setProperty('--d', '0s'); setTimeout(() => t.classList.add('in'), wait); });
   }), { threshold: .3 });
   /* watch the card, not the frame: the frame's own clip-path reveal hides it from the observer */
   new Set([...drops].map(t => t.closest('.wcard, .how__media, .door'))).forEach(c => dio.observe(c));
@@ -72,14 +77,14 @@
 
   const io = new IntersectionObserver(es => es.forEach(e => {
     if (!e.isIntersecting) return;
-    e.target.classList.add('in'); io.unobserve(e.target);
+    e.target.classList.add('in'); e.target.dataset.t = performance.now(); io.unobserve(e.target);
     if (e.target.matches('.proof__grid')) countUp(e.target);
   }), { rootMargin: '0px 0px -8% 0px' });
   document.querySelectorAll('[data-lines], .rv, .climb, .proof__grid, .stagger').forEach(el => io.observe(el));
 
   /* backup sweep for fast flicks: anything already above the fold line gets revealed */
   const sweep = () => document.querySelectorAll('[data-lines]:not(.in), .rv:not(.in), .climb:not(.in), .stagger:not(.in)').forEach(el => {
-    if (el.getBoundingClientRect().top < innerHeight * .95) el.classList.add('in');
+    if (el.getBoundingClientRect().top < innerHeight * .95) { el.classList.add('in'); el.dataset.t = performance.now(); }
   });
   addEventListener('scroll', sweep, { passive: true }); sweep();
 
