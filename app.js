@@ -65,7 +65,7 @@
     /* the photo frame opens from the bottom first; the tag sits at its top edge, so wait until the frame has opened
        or the drop happens out of sight behind the frame's mask */
     const f = e.target.querySelector('.rv'), opened = f && f.dataset.t ? performance.now() - f.dataset.t : 0;
-    const wait = !f ? 150 : !f.classList.contains('in') ? 1100 : Math.max(150, 1000 - opened);
+    const wait = !f ? 60 : !f.classList.contains('in') ? 650 : Math.max(60, 600 - opened);
     e.target.querySelectorAll('.drop').forEach(t => { t.style.setProperty('--d', '0s'); setTimeout(() => t.classList.add('in'), wait); });
   }), { threshold: .3 });
   /* watch the card, not the frame: the frame's own clip-path reveal hides it from the observer */

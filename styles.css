@@ -385,9 +385,9 @@ section{scroll-margin-top:72px}
 /* tags drop down from the top edge: the hero tag on load, the rest as their card comes into view */
 @keyframes tabDrop{from{clip-path:polygon(0 0,100% 0,calc(100% - 12px) 0,12px 0);transform:translateY(-70%)}
   to{clip-path:polygon(0 0,100% 0,calc(100% - 12px) 100%,12px 100%);transform:none}}
-.js .hero__tag{animation:tabDrop .9s var(--ease) .7s both}
+.js .hero__tag{animation:tabDrop .55s var(--ease) .35s both}
 .js .drop{clip-path:polygon(0 0,100% 0,calc(100% - 12px) 0,12px 0);transform:translateY(-70%);
-  transition:clip-path .8s var(--ease) var(--d,.35s),transform .8s var(--ease) var(--d,.35s)}
+  transition:clip-path .5s var(--ease) var(--d,.15s),transform .5s var(--ease) var(--d,.15s)}
 .js .drop.in{clip-path:polygon(0 0,100% 0,calc(100% - 12px) 100%,12px 100%);transform:none}
 /* list items rise in one after another */
 .js .stagger>*{opacity:0;transform:translateY(18px);transition:opacity .7s var(--ease),transform .7s var(--ease)}

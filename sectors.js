@@ -1,6 +1,5 @@
 /* Eleven ways to show Verdex's eight sectors. Switch with ?v=1..11 (picker pill at the bottom). */
 (() => {
-  const U = 'https://verdex.com/';
   const S = [
     { n: 'Multifamily', c: 33, d: 'Apartments, student housing', img: 's-multifamily.jpg', url: 'multifamily/', p: ['The Adderley Apartments', 'Vine on Clematis', 'Cortland Royal Palm Beach'] },
     { n: 'Industrial', c: 4, d: 'Logistics, manufacturing', img: 's-industrial.jpg', url: 'industrial-manufacturing/', p: ['Airport Logistics Warehouse', 'Turnpike Business Park', 'South Martin Industrial Park'] },
@@ -20,7 +19,7 @@
     1: () => `
       <div class="o1">
         <ol class="o1__list">${S.map((s, i) => `
-          <li><a class="o1__row${i ? '' : ' is-on'}" href="${U + s.url}" data-i="${i}">
+          <li><a class="o1__row${i ? '' : ' is-on'}" href="index.html#work" data-i="${i}">
             <span class="o1__no">${pad(i)}</span>
             <span class="o1__name">${s.n}</span>
             <span class="o1__d">${s.d}</span>
@@ -35,7 +34,7 @@
     /* 2. Photo grid: no colour blocks, just the photo with a small tab and one caption line. */
     2: () => `
       <ul class="o2">${S.map((s, i) => `
-        <li><a class="o2__card" href="${U + s.url}">
+        <li><a class="o2__card" href="index.html#work">
           <span class="o2__img cut">${img(s)}<span class="tab tab--on o2__tab">${pad(i)}</span></span>
           <span class="o2__cap"><span class="o2__name">${s.n}</span><span class="o2__c">${s.c}</span></span>
           <span class="o2__d">${s.d}</span>
@@ -57,7 +56,7 @@
     /* 4. Eight slim strips; the chosen one opens to show its photo. */
     4: () => `
       <div class="o4">${S.map((s, i) => `
-        <a class="o4__strip${i ? '' : ' is-on'}" href="${U + s.url}" data-i="${i}">
+        <a class="o4__strip${i ? '' : ' is-on'}" href="index.html#work" data-i="${i}">
           ${img(s)}
           <span class="o4__shade"></span>
           <span class="o4__no">${pad(i)}</span>
@@ -71,7 +70,7 @@
       const order = [0, 5, 6, 4, 3, 7, 1, 2];
       return `<div class="o5">${order.map((k, j) => {
         const s = S[k], photo = j < 3;
-        return `<a class="o5__cell o5__cell--${j}${photo ? ' o5__cell--ph' : ''}" href="${U + s.url}">
+        return `<a class="o5__cell o5__cell--${j}${photo ? ' o5__cell--ph' : ''}" href="index.html#work">
           ${photo ? `<span class="o5__img">${img(s)}</span>` : ''}
           <span class="o5__c">${s.c}</span>
           <span class="o5__txt"><span class="o5__name">${s.n}</span><span class="o5__d">${s.d}</span></span>
@@ -83,7 +82,7 @@
           like a notch cut out of the photo, holding the name. Hover only turns the name light blue. */
     6: () => `
       <ul class="o6">${S.map((s, i) => `
-        <li><a class="o6__card" href="${U + s.url}">
+        <li><a class="o6__card" href="index.html#work">
           ${img(s)}
           <span class="o6__plate">
             <span class="o6__no">${pad(i)}</span>
@@ -95,7 +94,7 @@
     /* 7. Same plain frame; the plate floats inside the photo with an even margin and runs the full width. */
     7: () => `
       <ul class="o7">${S.map((s, i) => `
-        <li><a class="o7__card" href="${U + s.url}">
+        <li><a class="o7__card" href="index.html#work">
           ${img(s)}
           <span class="o7__plate"><span class="o7__name">${s.n}</span><span class="o7__c">${s.c}</span></span>
         </a></li>`).join('')}
@@ -104,7 +103,7 @@
     /* 8. The grey frame is a mat: the photo is indented inside it, the name sits on the mat underneath. */
     8: () => `
       <ul class="o8">${S.map((s, i) => `
-        <li><a class="o8__card" href="${U + s.url}">
+        <li><a class="o8__card" href="index.html#work">
           <span class="o8__img">${img(s)}</span>
           <span class="o8__foot"><span class="o8__name">${s.n}</span><span class="o8__c">${pad(i)} · ${s.c} projects</span></span>
         </a></li>`).join('')}
@@ -113,7 +112,7 @@
     /* 9. Photos are toned blue-grey so the whole block reads as one colour; hover brings the photo back and the name turns light blue. */
     9: () => `
       <ul class="o9">${S.map((s, i) => `
-        <li><a class="o9__card" href="${U + s.url}">
+        <li><a class="o9__card" href="index.html#work">
           ${img(s)}
           <span class="o9__plate"><span class="o9__name">${s.n}</span></span>
           <span class="o9__c">${s.c}</span>
@@ -123,7 +122,7 @@
     /* 10. Uneven rhythm: the two biggest sectors run wide, the other six sit three to a row. Plate notched into the top left. */
     10: () => `
       <ul class="o10">${[0, 5, 6, 4, 3, 7, 1, 2].map(k => S[k]).map((s, i) => `
-        <li class="${i < 2 ? 'is-wide' : ''}"><a class="o10__card" href="${U + s.url}">
+        <li class="${i < 2 ? 'is-wide' : ''}"><a class="o10__card" href="index.html#work">
           ${img(s)}
           <span class="o10__plate"><span class="o10__no">${pad(i)}</span><span class="o10__name">${s.n}</span></span>
           <span class="o10__c">${s.c} projects</span>
@@ -133,7 +132,7 @@
            sliding down from the top edge on hover. */
     11: () => {
       return `<ul class="o11">${S.map((s, i) => `
-        <li><a class="o11__card" href="${U + s.url}">
+        <li><a class="o11__card" href="index.html#work">
           <span class="o11__top"><span class="o11__name">${s.n}</span><span class="o11__n">(${String(s.c).padStart(2, '0')})</span></span>
           <span class="o11__img">${img(s)}<span class="o11__bar">${s.c} projects · ${s.d}</span></span>
         </a></li>`).join('')}
@@ -166,7 +165,7 @@
         <span class="o3__c"><b>${s.c}</b> projects delivered</span>
         <span class="o3__d">${s.d}</span>
         <ul class="o3__p">${s.p.map(x => `<li>${x}</li>`).join('')}</ul>
-        <a class="link" href="${U + s.url}">See all ${s.n.toLowerCase()} work</a>`;
+        <a class="link" href="index.html#work">See all ${s.n.toLowerCase()} work</a>`;
     };
     tabs.forEach(t => t.addEventListener('click', () => set(+t.dataset.i))); set(0);
   }

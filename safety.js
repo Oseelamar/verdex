@@ -1,6 +1,6 @@
 /* Six ways to show Verdex's safety record. Switch with ?v=1..6 (picker pill at the bottom). */
 (() => {
-  const LINK = 'https://verdex.com/safety/';
+  const LINK = 'index.html#safety';
   const PH = '<span class="ph">Placeholder: Verdex\'s current EMR figure</span>';
   const head = (light, extra = '') => `
     <div class="s-head">
