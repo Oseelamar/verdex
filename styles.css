@@ -490,3 +490,6 @@ section{scroll-margin-top:72px}
   .js .hero__tag{animation:none}
   html{scroll-behavior:auto}
 }
+
+/* phone numbers and the email are shown as plain text: no link, no hover */
+a:not([href]){pointer-events:none;cursor:default}
