@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /sectors.html
+Disallow: /safety.html
+Disallow: /deck.html
+
+Sitemap: https://verdex-construction.pages.dev/sitemap.xml
