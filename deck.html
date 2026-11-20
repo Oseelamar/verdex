@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Verdex | Statement of qualifications deck</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+@font-face{font-family:"ABC Arizona Flare";src:url("fonts/ABCArizona-FlareRegular.otf") format("opentype");font-display:swap}
+:root{--ink:#06182F;--navy:#003478;--blue:#0079C8;--sky:#8CC6F0;--concrete:#E1E8EF;--paper:#F3F6F9;--mist:#C8D5E2;--grey:#53657A;--white:#fff;--bg:#030C18}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--white);font-family:Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+img{display:block;width:100%;height:100%;object-fit:cover}
+
+/* page around the slides */
+.top{display:flex;justify-content:space-between;align-items:baseline;gap:20px;max-width:1500px;margin:0 auto;padding:56px 40px 28px;
+  font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.55)}
+.top b{color:var(--white);font-weight:700}
+.deck{display:grid;gap:44px;max-width:1500px;margin:0 auto;padding:0 40px 96px}
+
+/* ---------- slide system: everything sized in cqw so a slide scales as one piece ---------- */
+.s{position:relative;aspect-ratio:16/9;container-type:inline-size;overflow:hidden;background:var(--paper);color:var(--ink);box-shadow:0 30px 80px rgba(0,0,0,.45)}
+.s--navy{background:var(--navy);color:var(--white)}
+.s--ink{background:var(--ink);color:var(--white)}
+.s::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:9;opacity:.07;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.s>*{position:absolute}
+.fl{font-family:"ABC Arizona Flare",Georgia,serif;font-weight:400;text-transform:uppercase;line-height:1.04;letter-spacing:-.012em}
+.cap{font-size:.64cqw;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
+.idx{font-size:.72cqw;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--blue)}
+.s--navy .idx,.s--ink .idx{color:var(--sky)}
+.body{font-size:1.02cqw;line-height:1.55;color:var(--grey)}
+.s--navy .body,.s--ink .body{color:rgba(255,255,255,.74)}
+
+/* chrome: labels with a short vertical bar, mark top right, folio bottom */
+.lbl{top:3.3cqw;display:flex;align-items:center;gap:.8cqw;opacity:.8}
+.lbl::before{content:"";width:1px;height:1.5cqw;background:currentColor}
+.mark{top:2.9cqw;right:4.2cqw;width:2.3cqw;aspect-ratio:76/65;background:url(media/logo.png) left center/auto 100% no-repeat}
+.s--navy .mark,.s--ink .mark,.mark--w{filter:brightness(0) invert(1)}
+.folio{bottom:2.8cqw;right:4.2cqw;font-size:.66cqw;font-weight:600;letter-spacing:.12em;opacity:.6}
+.url{bottom:2.8cqw;left:4.2cqw;font-size:.66cqw;font-weight:600;letter-spacing:.12em;opacity:.6}
+
+/* brand shapes from the site */
+.cut{--c:2.4cqw;clip-path:polygon(var(--c) 0,100% 0,100% calc(100% - var(--c)),calc(100% - var(--c)) 100%,0 100%,0 var(--c))}
+.tag{top:0;padding:.62cqw 1.7cqw .68cqw;font-size:.64cqw;font-weight:700;letter-spacing:.16em;text-transform:uppercase;white-space:nowrap;
+  clip-path:polygon(0 0,100% 0,calc(100% - .85cqw) 100%,.85cqw 100%);background:var(--ink);color:var(--white);z-index:2}
+.tag--blue{background:var(--blue)}
+.tag--sky{background:var(--sky);color:var(--ink)}
+.rule{height:1px;background:currentColor;opacity:.22}
+.rule i{position:absolute;top:-.17cqw;width:.36cqw;height:.36cqw;border-radius:50%;background:currentColor;transform:translateX(-50%)}
+.rule i:nth-child(1){left:0}.rule i:nth-child(2){left:50%}.rule i:nth-child(3){left:100%}
+.hair{height:1px;background:currentColor;opacity:.18}
+
+/* ---------- 01 cover ---------- */
+.cover-ph{left:50cqw;top:0;right:0;bottom:0;--c:7cqw}
+.cover-ph img{object-position:50% 60%}
+.cover-tri{left:50cqw;bottom:0;width:12cqw;height:12cqw;background:var(--sky);clip-path:polygon(0 0,100% 100%,0 100%)}
+.cover-t{left:4.2cqw;top:15cqw;font-size:5.4cqw;line-height:1}
+.cover-sub{left:4.2cqw;top:28.6cqw;width:34cqw}
+.cover-logo{left:4.2cqw;bottom:4.4cqw;width:12cqw;height:3.3cqw}
+.cover-logo img{object-fit:contain;object-position:left;filter:brightness(0) invert(1)}
+.meta{left:23cqw;bottom:4.2cqw;width:23cqw;display:grid}
+.meta div{display:grid;grid-template-columns:7.4cqw 1fr;gap:1cqw;padding:.8cqw 0;border-top:1px solid rgba(255,255,255,.22);font-size:.74cqw;line-height:1.35}
+.meta span{font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:.6cqw;color:var(--sky);padding-top:.1cqw}
+
+/* ---------- 02 contents ---------- */
+.toc-ph{left:0;top:0;bottom:0;width:40cqw;clip-path:polygon(0 0,100% 0,78% 100%,0 100%)}
+.toc-ph img{object-position:40% 50%}
+.toc-tri{left:31.2cqw;bottom:0;width:8.8cqw;height:15.6cqw;background:var(--navy);clip-path:polygon(100% 0,100% 100%,0 100%)}
+.toc{left:48cqw;right:4.2cqw;top:16cqw;display:grid}
+.toc a{position:relative;display:grid;grid-template-columns:4.4cqw 1fr auto;align-items:baseline;padding:1.7cqw 0 1.5cqw;color:inherit;text-decoration:none;border-top:1px solid rgba(6,24,47,.16)}
+.toc a:last-child{border-bottom:1px solid rgba(6,24,47,.16)}
+.toc em{font-style:normal;font-size:.72cqw;font-weight:700;letter-spacing:.14em;color:var(--blue)}
+.toc b{font-family:"ABC Arizona Flare",Georgia,serif;font-weight:400;text-transform:uppercase;font-size:2.5cqw;line-height:1}
+.toc small{font-size:.7cqw;font-weight:600;letter-spacing:.12em;color:var(--grey)}
+.toc a::before{content:"";position:absolute;left:0;top:-.17cqw;width:.36cqw;height:.36cqw;border-radius:50%;background:var(--ink);opacity:.5;transform:translateX(-50%)}
+
+/* ---------- 03 who we are ---------- */
+.who-ph{left:63cqw;top:0;right:0;bottom:0;--c:6cqw;clip-path:polygon(var(--c) 0,100% 0,100% 100%,0 100%,0 var(--c))}
+.who-ph img{object-position:40% 30%}
+.who-st{left:4.2cqw;top:12.2cqw;width:54cqw;font-size:3.5cqw}
+.who-bd{left:4.2cqw;top:27.4cqw;width:36cqw}
+.stats{left:4.2cqw;width:54.6cqw;top:38.4cqw;display:grid;grid-template-columns:repeat(4,1fr)}
+.stats div{padding-top:1.6cqw}
+.stats b{display:block;font-family:"ABC Arizona Flare",Georgia,serif;font-weight:400;font-size:4.4cqw;line-height:.9;color:var(--navy)}
+.stats span{display:block;margin-top:.8cqw;font-size:.74cqw;line-height:1.4;color:var(--grey);max-width:11cqw}
+
+/* ---------- 04 track record ---------- */
+.rank-n{left:3.4cqw;top:6.6cqw;font-size:16cqw;line-height:1}
+.rank-t{left:4.2cqw;top:24.4cqw;width:26cqw;font-size:2.2cqw}
+.rank-s{left:4.2cqw;top:33.6cqw;width:26cqw}
+.chart{left:38cqw;right:4.2cqw;top:9.5cqw;height:28cqw}
+.bar{position:absolute;bottom:2.2cqw;width:4.1cqw;background:var(--blue);clip-path:polygon(0 0,calc(100% - .9cqw) 0,100% .9cqw,100% 100%,0 100%)}
+.bar.is-now{background:var(--sky)}
+.bar-r{position:absolute;font-size:.78cqw;font-weight:700;width:4.1cqw;text-align:center}
+.bar-y{position:absolute;bottom:0;width:4.1cqw;text-align:center;font-size:.66cqw;font-weight:600;opacity:.55}
+.chart-base{left:38cqw;right:4.2cqw;top:35.4cqw}
+.awards{left:4.2cqw;right:4.2cqw;top:42cqw;display:grid;grid-template-columns:repeat(4,1fr);gap:2cqw}
+.awards div{padding-top:1.3cqw;border-top:1px solid rgba(255,255,255,.22)}
+.awards span{display:block;font-size:.62cqw;font-weight:700;letter-spacing:.16em;color:var(--sky)}
+.awards b{display:block;margin-top:.6cqw;font-size:.96cqw;font-weight:600;line-height:1.3}
+.awards small{display:block;margin-top:.3cqw;font-size:.74cqw;opacity:.65}
+
+/* ---------- 05 safety ---------- */
+.saf-ph{left:0;top:0;bottom:0;width:42cqw}
+.saf-ph img{object-position:46% 50%}
+.saf-t{left:48cqw;top:10.4cqw;font-size:3.4cqw;width:44cqw}
+.ruler{left:48cqw;right:4.2cqw;top:22.6cqw;height:14cqw}
+.ruler-l{left:0;right:0;top:0;display:flex;justify-content:space-between;font-size:.62cqw;font-weight:700;letter-spacing:.16em;text-transform:uppercase;opacity:.55;position:absolute}
+.track{position:absolute;left:0;right:0;top:6.6cqw;height:4.6cqw;background:rgba(255,255,255,.06);border-top:1px solid rgba(255,255,255,.18);border-bottom:1px solid rgba(255,255,255,.18)}
+.fill{position:absolute;left:0;top:0;bottom:0;width:calc(.7/1.5*100%);background:linear-gradient(90deg,var(--navy),var(--blue))}
+.tick{position:absolute;bottom:0;width:1px;height:.8cqw;background:rgba(255,255,255,.35)}
+.tick.maj{height:100%;background:rgba(255,255,255,.18)}
+.tick b{position:absolute;top:calc(100% + .8cqw);left:0;transform:translateX(-50%);font-size:.66cqw;font-weight:600;opacity:.6}
+.tick.first b{transform:none}.tick.last b{transform:translateX(-100%)}
+.mk{position:absolute;top:0;bottom:0;width:2px}
+.mk--us{left:calc(.7/1.5*100%);background:var(--white)}
+.mk--ind{left:calc(1/1.5*100%);background:var(--sky)}
+.flag{position:absolute;bottom:calc(100% + .6cqw);display:flex;flex-direction:column;gap:.35cqw;white-space:nowrap;font-size:.6cqw;font-weight:700;letter-spacing:.16em;text-transform:uppercase;opacity:.9}
+.flag b{font-family:"ABC Arizona Flare",Georgia,serif;font-weight:400;font-size:2.8cqw;line-height:.8;letter-spacing:0}
+.mk--us .flag{right:.8cqw;align-items:flex-end}
+.mk--ind .flag{left:.8cqw}.mk--ind .flag b{color:var(--sky)}
+.sfacts{left:48cqw;right:4.2cqw;top:41.4cqw;display:grid;grid-template-columns:1fr 1fr;column-gap:2.4cqw}
+.sfacts div{display:flex;align-items:baseline;gap:1.2cqw;padding:1.3cqw 0;border-top:1px solid rgba(255,255,255,.18)}
+.sfacts b{font-family:"ABC Arizona Flare",Georgia,serif;font-weight:400;font-size:1.6cqw;line-height:1;color:var(--sky);white-space:nowrap}
+.sfacts span{font-size:.78cqw;line-height:1.35;opacity:.75}
+
+/* ---------- 06 selected work ---------- */
+.wk-h{left:4.2cqw;top:10.4cqw;font-size:3.2cqw}
+.wk-n{right:4.2cqw;top:12.6cqw;width:30cqw;text-align:right}
+.cards{left:4.2cqw;right:4.2cqw;top:17.6cqw;display:grid;grid-template-columns:repeat(3,1fr);gap:1.6cqw}
+.card{position:relative}
+.card .ph{position:relative;height:26.6cqw;--c:2cqw}
+.card .tag{position:absolute;left:1.8cqw}
+.card .rule{position:relative;margin-top:1.3cqw;opacity:1;background:rgba(6,24,47,.18)}
+.card .rule i{background:rgba(6,24,47,.45)}
+.card h3{margin-top:1.1cqw;font-family:"ABC Arizona Flare",Georgia,serif;font-weight:400;text-transform:uppercase;font-size:1.55cqw;line-height:1.05}
+.card p{margin-top:.55cqw;font-size:.66cqw;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--grey)}
+.card p span+span::before{content:"/";margin:0 .7cqw;opacity:.5}
+
+@media (max-width:700px){.top{padding:28px 16px 16px;flex-direction:column;gap:6px}.deck{padding:0 16px 56px;gap:20px}}
+</style>
+</head>
+<body>
+
+<header class="top"><span><b>Verdex Construction</b> · Statement of qualifications</span><span>Deck mock-up · 6 slides · 16:9</span></header>
+
+<main class="deck">
+
+<!-- 01 COVER -->
+<section class="s s--navy" aria-label="Slide 1, cover">
+  <div class="cover-ph cut"><img src="media/hero-point.jpg" alt="The Point at Palm Beach Gardens at sunset"></div>
+  <span class="tag tag--sky" style="left:62cqw">The Point at Palm Beach Gardens</span>
+  <div class="cover-tri"></div>
+  <span class="lbl cap" style="left:4.2cqw">Statement of qualifications</span>
+  <span class="lbl cap" style="left:25cqw">Verdex Construction © 2026</span>
+  <h1 class="fl cover-t">Statement of<br>qualifications</h1>
+  <p class="body cover-sub">Preconstruction through closeout for owners and developers across Florida.</p>
+  <div class="cover-logo"><img src="media/logo.png" alt="Verdex Construction"></div>
+  <div class="meta">
+    <div><span>Prepared for</span>Owner &amp; development teams</div>
+    <div><span>Sectors</span>Multifamily · Industrial · Commercial</div>
+    <div><span>Date</span>November 2026</div>
+  </div>
+</section>
+
+<!-- 02 CONTENTS -->
+<section class="s" aria-label="Slide 2, contents">
+  <div class="toc-ph"><img src="media/expertise.jpg" alt="Verdex superintendents reviewing drawings on site"></div>
+  <div class="toc-tri"></div>
+  <span class="tag tag--blue" style="left:3cqw">Precon starts at concept</span>
+  <span class="lbl cap" style="left:48cqw">Statement of qualifications</span>
+  <span class="lbl cap" style="left:70cqw">Contents</span>
+  <span class="mark"></span>
+  <p class="idx" style="left:48cqw;top:11.4cqw">[ Index ]</p>
+  <nav class="toc">
+    <a><em>01</em><b>Who we are</b><small>P. 03</small></a>
+    <a><em>02</em><b>Track record</b><small>P. 04</small></a>
+    <a><em>03</em><b>Safety record</b><small>P. 05</small></a>
+    <a><em>04</em><b>Selected work</b><small>P. 06</small></a>
+  </nav>
+  <span class="folio">02</span>
+</section>
+
+<!-- 03 WHO WE ARE -->
+<section class="s" aria-label="Slide 3, who we are">
+  <div class="who-ph"><img src="media/careers.jpg" alt="Two Verdex crew members walking on site"></div>
+  <span class="tag" style="left:69cqw">West Palm Beach · Tampa · Orlando</span>
+  <span class="lbl cap" style="left:4.2cqw">Statement of qualifications</span>
+  <span class="lbl cap" style="left:25cqw">01 · Who we are</span>
+  <p class="idx" style="left:4.2cqw;top:8.8cqw">[ 01 ] Who we are</p>
+  <h2 class="fl who-st">Florida's builder for multifamily, industrial &amp; commercial.</h2>
+  <p class="body who-bd">Preconstruction through closeout, from offices in West Palm Beach, Tampa and Orlando. Ground-up and renovation, backed by Berkshire Hathaway bonding.</p>
+  <div class="rule" style="left:4.2cqw;width:54.6cqw;top:38.4cqw"><i></i><i></i><i></i></div>
+  <div class="stats">
+    <div><b>77</b><span>Projects in the portfolio</span></div>
+    <div><b>08</b><span>Sectors, ground-up &amp; renovation</span></div>
+    <div><b>40+</b><span>Years our founder has built in Florida</span></div>
+    <div><b>03</b><span>Offices across the state</span></div>
+  </div>
+  <span class="url">verdex.com</span>
+</section>
+
+<!-- 04 TRACK RECORD -->
+<section class="s s--navy" aria-label="Slide 4, track record">
+  <span class="lbl cap" style="left:4.2cqw">Statement of qualifications</span>
+  <span class="lbl cap" style="left:25cqw">02 · Track record</span>
+  <span class="mark"></span>
+  <div class="fl rank-n">#8</div>
+  <h2 class="fl rank-t">Largest general contractor in South Florida.</h2>
+  <p class="body rank-s">South Florida Business Journal, 2026. Ten consecutive years on the list.</p>
+  <div class="chart" id="chart" aria-label="Rank by year: 2017 #18, 2018 #15, 2019 #11, 2020 #11, 2021 #9, 2022 #9, 2023 #6, 2024 #6, 2025 #11, 2026 #8"></div>
+  <div class="awards">
+    <div><span>2026</span><b>ENR Top 100 Contractors</b><small>Texas &amp; Southeast</small></div>
+    <div><span>2025</span><b>Excellence in Construction, Eagle</b><small>ABC · The Adderley Apartments</small></div>
+    <div><span>2024</span><b>Excellence in Construction, Pyramid</b><small>ABC · Tortoise One &amp; Aloft Hotel</small></div>
+    <div><span>2025</span><b>Best Places to Work</b><small>South Florida Business Journal</small></div>
+  </div>
+  <span class="folio">04</span>
+</section>
+
+<!-- 05 SAFETY -->
+<section class="s s--ink" aria-label="Slide 5, safety record">
+  <div class="saf-ph"><img src="media/safety-top.jpg" alt="Verdex superintendent tied off on site"></div>
+  <span class="tag tag--blue" style="left:3cqw">Tied off, every time</span>
+  <span class="lbl cap" style="left:48cqw">Statement of qualifications</span>
+  <span class="lbl cap" style="left:70cqw">03 · Safety record</span>
+  <span class="mark"></span>
+  <p class="idx" style="left:48cqw;top:8.4cqw">[ 03 ] Safety record</p>
+  <h2 class="fl saf-t">Everyone on site<br>goes home safe.</h2>
+  <div class="ruler" role="img" aria-label="Experience modification rate: Verdex 0.70 against an industry standard of 1.0. Lower is safer.">
+    <div class="ruler-l"><span>Experience modification rate</span><span>Lower is safer</span></div>
+    <div class="track" id="track"><span class="fill"></span>
+      <span class="mk mk--us"><span class="flag"><b>0.70</b>Verdex</span></span>
+      <span class="mk mk--ind"><span class="flag"><b>1.0</b>Industry standard</span></span>
+    </div>
+  </div>
+  <div class="sfacts">
+    <div><b>100%</b><span>of our team OSHA 10 certified</span></div>
+    <div><b>OSHA 30</b><span>for every superintendent</span></div>
+    <div><b>Monthly</b><span>unannounced third-party inspections</span></div>
+    <div><b>STEP Silver</b><span>ABC safety award, 2023 &amp; 2024</span></div>
+  </div>
+  <span class="folio">05</span>
+</section>
+
+<!-- 06 SELECTED WORK -->
+<section class="s" aria-label="Slide 6, selected work">
+  <span class="lbl cap" style="left:4.2cqw">Statement of qualifications</span>
+  <span class="lbl cap" style="left:25cqw">04 · Selected work</span>
+  <span class="mark"></span>
+  <p class="idx" style="left:4.2cqw;top:7.8cqw">[ 04 ] Selected work</p>
+  <h2 class="fl wk-h">Built, delivered, awarded.</h2>
+  <p class="body wk-n">Three of 77 projects. The full portfolio is at verdex.com.</p>
+  <div class="cards">
+    <article class="card">
+      <div class="ph cut"><img src="media/hero-vine.jpg" alt="Vine on Clematis apartments"></div><span class="tag">Multifamily</span>
+      <div class="rule"><i></i><i></i><i></i></div>
+      <h3>Vine on Clematis</h3><p><span>West Palm Beach, FL</span><span>Mid-rise apartments</span></p>
+    </article>
+    <article class="card">
+      <div class="ph cut"><img src="media/p-aloft.jpg" alt="Aloft Hotel pool deck"></div><span class="tag">Hospitality</span>
+      <div class="rule"><i></i><i></i><i></i></div>
+      <h3>Aloft Hotel</h3><p><span>Fort Lauderdale, FL</span><span>ABC Pyramid 2024</span></p>
+    </article>
+    <article class="card">
+      <div class="ph cut"><img src="media/p-turnpike.jpg" alt="Turnpike Business Park warehouse"></div><span class="tag">Industrial</span>
+      <div class="rule"><i></i><i></i><i></i></div>
+      <h3>Turnpike Business Park</h3><p><span>West Palm Beach, FL</span><span>Industrial / warehouse</span></p>
+    </article>
+  </div>
+  <span class="folio">06</span>
+</section>
+
+</main>
+
+<script>
+/* rank chart (same data as the homepage) */
+(() => {
+  const ranks=[18,15,11,11,9,9,6,6,11,8], years=[2017,2018,2019,2020,2021,2022,2023,2024,2025,2026];
+  const el=document.getElementById('chart'), slot=100/ranks.length;
+  el.innerHTML=ranks.map((r,i)=>{const h=(22-r)*1.45, x=`calc(${i*slot}% + (${slot}% - 4.1cqw)/2)`, now=i===ranks.length-1;
+    return `<span class="bar${now?' is-now':''}" style="left:${x};height:${h}cqw"></span>
+            <span class="bar-r" style="left:${x};bottom:${h+2.2+.5}cqw;opacity:${now?1:.7}">#${r}</span>
+            <span class="bar-y" style="left:${x}">${years[i]}</span>`}).join('');
+  /* ruler ticks */
+  const tr=document.getElementById('track');
+  for(let i=0;i<=15;i++){const t=document.createElement('span');t.className='tick'+(i%5?'':' maj')+(i===0?' first':'')+(i===15?' last':'');t.style.left=(i/15*100)+'%';if(i%5===0)t.innerHTML=`<b>${(i/10).toFixed(1)}</b>`;tr.prepend(t)}
+})();
+</script>
+</body>
+</html>
